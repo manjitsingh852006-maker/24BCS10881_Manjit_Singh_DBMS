@@ -16,18 +16,17 @@ COMMIT;
 
 DECLARE
 
-    -- Cursor to fetch all orders
     CURSOR order_cursor IS
         SELECT Order_ID, Amount
         FROM Orders;
 
 BEGIN
 
-    -- Cursor FOR loop processes orders one by one
+   
     FOR order_rec IN order_cursor
     LOOP
 
-        -- Check if amount is greater than 10,000
+       
         IF order_rec.Amount > 10000 THEN
 
             DBMS_OUTPUT.PUT_LINE(
